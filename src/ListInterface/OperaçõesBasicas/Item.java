@@ -1,4 +1,4 @@
-package ListInterface;
+package ListInterface.OperaçõesBasicas;
 
 public class Item 
 {

@@ -1,4 +1,4 @@
-package ListInterface.OperaçõesBasicas;
+package ListInterface.Pesquisa;
 
 import java.util.ArrayList;
 import java.util.List;
