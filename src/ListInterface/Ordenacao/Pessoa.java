@@ -41,12 +41,14 @@ public class Pessoa implements Comparable<Pessoa>
 
     //Sobrescrevendo toString
     @Override
-    public String toString() {
-        return "Pessoa [nome=" + nome + ", idade=" + idade + ", altura=" + altura + "]";
+    public String toString() 
+    {
+        return "Pessoa [nome=" + nome + ", idade=" + idade + ", altura=" + altura + "]";   
     }
 
 }
 
+//Cria uma classe que implementa o Comparator para usa-lo sobrescrevendo seu método
 class ComparatorPorAltura implements Comparator<Pessoa>
 {
 
