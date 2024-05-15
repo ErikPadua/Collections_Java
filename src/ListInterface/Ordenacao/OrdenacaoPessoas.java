@@ -1,6 +1,7 @@
 package ListInterface.Ordenacao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OrdenacaoPessoas 
@@ -19,6 +20,18 @@ public class OrdenacaoPessoas
         listaDePessoas.add(new Pessoa(nome, idade, altura));
     }
 
-    public
+    public List<Pessoa> ordenarPorIdade()
+    {
+        List<Pessoa> pessoasPorIdade = new ArrayList<>(listaDePessoas);
+        Collections.sort(pessoasPorIdade);
+        return pessoasPorIdade;
+    }
+
+    public List<Pessoa> ordenarPorAltura()
+    {
+        List<Pessoa> pessoasPorAltura = new ArrayList<>(listaDePessoas);
+        Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
+        return pessoasPorAltura;
+    }
     
 }
