@@ -10,6 +10,9 @@ import java.util.NoSuchElementException;
 
 public class LivrariaOnline 
 {
+
+//--------------------------------------------------Código-----------------------------------------------------------
+
     private Map<String, Livro> livrosMap;
 
     public LivrariaOnline() 
@@ -38,52 +41,66 @@ public class LivrariaOnline
         }
     }
 
-    public Map<String, Livro> exibirLivrosOrdenadosPorPreco() {
-    List<Map.Entry<String, Livro>> livrosParaOrdenarPorPreco = new ArrayList<>(livrosMap.entrySet());
+   
+    public Map<String, Livro> exibirLivrosOrdenadosPorPreco() 
+    {
+      List<Map.Entry<String, Livro>> livrosParaOrdenarPorPreco = new ArrayList<>(livrosMap.entrySet());
 
-    Collections.sort(livrosParaOrdenarPorPreco, new ComparatorPorPreco());
+      Collections.sort(livrosParaOrdenarPorPreco, new ComparatorPorPreco());
 
-    Map<String, Livro> livrosOrdenadosPorPreco = new LinkedHashMap<>();
+      Map<String, Livro> livrosOrdenadosPorPreco = new LinkedHashMap<>();
 
-    for (Map.Entry<String, Livro> entry : livrosParaOrdenarPorPreco) {
-      livrosOrdenadosPorPreco.put(entry.getKey(), entry.getValue());
-    }
+      for (Map.Entry<String, Livro> entry : livrosParaOrdenarPorPreco)
+      {
+        livrosOrdenadosPorPreco.put(entry.getKey(), entry.getValue());
+      }
 
     return livrosOrdenadosPorPreco;
-  }
-
-   public Map<String, Livro> exibirLivrosOrdenadosPorAutor() {
-    List<Map.Entry<String, Livro>> livrosParaOrdenarPorAutor = new ArrayList<>(livrosMap.entrySet());
-
-    Collections.sort(livrosParaOrdenarPorAutor, new ComparatorPorAutor());
-
-    Map<String, Livro> livrosOrdenadosPorAutor = new LinkedHashMap<>();
-
-    for (Map.Entry<String, Livro> entry : livrosParaOrdenarPorAutor) {
-      livrosOrdenadosPorAutor.put(entry.getKey(), entry.getValue());
     }
 
-    return livrosOrdenadosPorAutor;
-  }
+  
+    public Map<String, Livro> exibirLivrosOrdenadosPorAutor() 
+    {
+      List<Map.Entry<String, Livro>> livrosParaOrdenarPorAutor = new ArrayList<>(livrosMap.entrySet());
 
-  public Map<String, Livro> pesquisarLivrosPorAutor(String autor) {
-    Map<String, Livro> livrosPorAutor = new LinkedHashMap<>();
-    for (Map.Entry<String, Livro> entry : livrosMap.entrySet()) {
-      Livro livro = entry.getValue();
-      if (livro.getAutor().equals(autor)) {
-        livrosPorAutor.put(entry.getKey(), livro);
+      Collections.sort(livrosParaOrdenarPorAutor, new ComparatorPorAutor());
+
+      Map<String, Livro> livrosOrdenadosPorAutor = new LinkedHashMap<>();
+
+      for (Map.Entry<String, Livro> entry : livrosParaOrdenarPorAutor) 
+      {
+        livrosOrdenadosPorAutor.put(entry.getKey(), entry.getValue());
       }
-    }
-    return livrosPorAutor;
-  }
 
-  public List<Livro> obterLivroMaisCaro() {
+      return livrosOrdenadosPorAutor;
+    }
+
+  
+    public Map<String, Livro> pesquisarLivrosPorAutor(String autor) 
+    {
+      Map<String, Livro> livrosPorAutor = new LinkedHashMap<>();
+      for (Map.Entry<String, Livro> entry : livrosMap.entrySet()) 
+      {
+        Livro livro = entry.getValue();
+        if (livro.getAutor().equals(autor)) 
+        {
+          livrosPorAutor.put(entry.getKey(), livro);
+        }
+      }
+      return livrosPorAutor;
+    }
+
+
+  public List<Livro> obterLivroMaisCaro() 
+  {
     List<Livro> livrosMaisCaros = new ArrayList<>();
     double precoMaisAlto = Double.MIN_VALUE;
 
     if (!livrosMap.isEmpty()) {
-      for (Livro livro : livrosMap.values()) {
-        if (livro.getPreco() > precoMaisAlto) {
+      for (Livro livro : livrosMap.values()) 
+      {
+        if (livro.getPreco() > precoMaisAlto) 
+        {
           precoMaisAlto = livro.getPreco();
         }
       }
@@ -99,6 +116,7 @@ public class LivrariaOnline
     }
     return livrosMaisCaros;
   }
+
 
   public List<Livro> obterLivroMaisBarato() {
     List<Livro> livrosMaisBaratos = new ArrayList<>();
