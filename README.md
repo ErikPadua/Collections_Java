@@ -1,4 +1,7 @@
-## Estudo sobre a Classe Collections java
+## Explorando algumas interfaces da super classe collections do java
+Este estudo foi feito de forma bem simples e didática pela Digital Innovation One (DIO)
+onde abordara as interfaces
 
-esse repositório foi criado a partir de video aulas da Dio sobre a classe collections e a classe map
-com varios exemplos.
+ - Set
+ - Map
+ - List
